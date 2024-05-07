@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Donation Website</title>
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="about.css">
+    <script>
+      fetch("/Navigation/navigation.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav1").innerHTML = data;
+          setActiveLink("about");
+        })
+        .catch((error) => {
+          console.error("Error fetching content:", error);
+        });
+
+      function setActiveLink(linkName) {
+        var navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+        });
+        var selectedLink = document.querySelector(`[name="${linkName}"]`);
+        if (selectedLink) {
+          selectedLink.classList.add("active");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="nav1"></div>
+    <div class="container">
+        
+      <div class="jumbotron">
+        <h1 class="display-5">About Us</h1>
+        <h6>
+          We are dedicated to making a difference
+          in the world through acts of kindness and generosity.
+        </h6>
+        <hr class="my-4" />
+        <p>
+          We believe that every individual deserves access to basic necessities
+          such as food, shelter, education, and healthcare. Our mission is to
+          provide support and assistance to those in need, regardless of their
+          circumstances.
+        </p>
+        <p>
+          We have been committed to
+          serving communities locally and globally. Through partnerships with
+          local organizations and international relief efforts, we strive to
+          address a wide range of issues including poverty, hunger, education,
+          healthcare, and disaster relief.
+        </p>
+        <p>
+          Our work is made possible by the generosity of our donors and the
+          dedication of our volunteers. Together, we have impacted the lives of
+          countless individuals and families, bringing hope and assistance where
+          it is needed most.
+        </p>
+        <p>
+          Join us in our mission to create a more compassionate and equitable
+          world. Together, we can make a difference.
+        </p>
+        <!-- <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button"
+            >Learn more</a
+          >
+        </p> -->
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
